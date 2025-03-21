@@ -64,7 +64,7 @@ async function fetchFromModelsLab(messages: any[], maxTokens = 2000) {
 export async function POST(req: Request) {
   try {
     // Get API key from Authorization header
-    const authHeader = headers().get("Authorization")
+    const authHeader = (await headers()).get("Authorization")
 
     if (!authHeader || !authHeader.startsWith("Bearer ")) {
       return NextResponse.json({ error: "Missing or invalid API key" }, { status: 401 })
