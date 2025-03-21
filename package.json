@@ -56,7 +56,6 @@
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "zod": "latest",
-    "@auth/core": "latest",
     "nodemailer": "latest",
     "@prisma/client": "latest",
     "prisma": "latest",
