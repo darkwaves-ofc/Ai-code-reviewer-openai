@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/header"
 import "@/app/globals.css"
+import { getServerSession } from "next-auth"
+import { authOptions } from "@/lib/auth"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -14,16 +16,17 @@ export const metadata = {
     generator: 'v0.dev'
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const session = await getServerSession(authOptions)
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <Header />
+          <Header session={session} />
           {children}
           <Toaster />
         </ThemeProvider>
@@ -31,7 +34,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'

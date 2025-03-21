@@ -27,7 +27,7 @@ export async function createCheckoutSession(formData: FormData) {
 
   const priceId = formData.get("priceId") as string
 
-  if (!priceId || !Object.values(PLANS).includes(priceId)) {
+  if (!priceId) {
     return {
       error: "Invalid price ID",
     }
