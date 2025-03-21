@@ -130,4 +130,7 @@
   .text-balance {
     text-wrap: balance;
   }
+  .container {
+    @apply mx-auto
+  }
 }
