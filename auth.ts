@@ -2,14 +2,11 @@
 
 import { signIn as nextAuthSignIn } from "next-auth/react";
 
-interface AuthError {
-    type: string;
-}
 export async function signIn(provider: string, data: any) {
   try {
     await nextAuthSignIn(provider, data);
-  } catch (error) {
-    if (error instanceof AuthError) {
+  } catch (error: any) {
+    if (error && typeof error === "object" && "type" in error) {
       switch (error.type) {
         case "CredentialsSignin":
           return { error: "Invalid credentials." };
