@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Code Reviewer - Modelslab
 
-## Getting Started
+## Overview
+AI-powered code review tool that helps developers analyze and improve their code quality with AI models.
 
-First, run the development server:
+## Screenshots
+![screenshot crysolabs coderoast](https://coderoast.crysolabs.com/screenshots/Screenshot-1.png)
+![screenshot crysolabs coderoast](https://coderoast.crysolabs.com/screenshots/Screenshot-2.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Features
+- AI-powered code review
+- Authentication with NextAuth
+- API key management
+- Team collaboration
+- Stripe payment integration
+- Webhooks for Stripe events
+
+## Installation
+Clone the repository:
+```sh
+ git clone https://github.com/crysolabs/Ai-code-reviewer-modelslab.git
+ cd Ai-code-reviewer-modelslab
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install dependencies:
+```sh
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
+Create a `.env` file in the root directory and add the following variables:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+# NextAuth
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your-nextauth-secret
 
-## Learn More
+# Database
+DATABASE_URL=your-mongodb-connection-string
 
-To learn more about Next.js, take a look at the following resources:
+# OAuth Providers
+GITHUB_CLIENT_ID=your-github-client-id
+GITHUB_CLIENT_SECRET=your-github-client-secret
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Stripe
+STRIPE_SECRET_KEY=your-stripe-secret-key
+STRIPE_WEBHOOK_SECRET=your-stripe-webhook-secret
+NEXT_PUBLIC_STRIPE_PRO_PRICE_ID=your-stripe-pro-price-id
+NEXT_PUBLIC_STRIPE_TEAM_PRICE_ID=your-stripe-team-price-id
+NEXT_PUBLIC_APP_URL=http://localhost:3000
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# OpenAI
+OPENAI_API_KEY=your-openai-api-key
+```
 
-## Deploy on Vercel
+## Running the Project
+Start the development server:
+```sh
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Scripts
+- `dev`: Start the development server
+- `build`: Build the project
+- `start`: Start the production server
+- `lint`: Run ESLint
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## API Routes
+- `api/auth` - Authentication (NextAuth)
+- `api/review` - Code review endpoint
+- `api/webhooks/stripe` - Stripe webhook handler
+  
+## Video Demonstration
+[YouTube Video](link)
+
+## Live Demo
+[CodeRoast - Crysolabs](https://coderoast.crysolabs.com/)
+
+## Repository
+[GitHub - Crysolabs](https://github.com/crysolabs/Ai-code-reviewer-modelslab)
+
+## Official Website
+[Crysolabs](https://crysolabs.com/)
+
+## License
+This project is licensed under the MIT License.
+
