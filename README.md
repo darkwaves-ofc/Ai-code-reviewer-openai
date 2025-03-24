@@ -73,7 +73,7 @@ npm run dev
 - `api/webhooks/stripe` - Stripe webhook handler
   
 ## Video Demonstration
-[YouTube Video](link)
+[YouTube Video](https://youtu.be/YK5VFMuufrQ)
 
 ## Live Demo
 [CodeRoast - Crysolabs](https://coderoast.crysolabs.com/)
